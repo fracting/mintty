@@ -1,0 +1,15 @@
+build:
+  image: fracting/$$platform
+  pull: true
+  shell: $$platform
+  commands:
+    -   cd src
+    - make wm_names.t
+    - make vk_names.t
+    - cd ..
+    - make
+
+matrix:
+  platform:
+#    - cygwin32
+    - msys32
