@@ -1,11 +1,21 @@
 build:
-  image: fracting/msys32:latest
+  image: fracting/$$platform
   pull: true
   shell: $$platform
   commands:
-    - ./ci-build.sh
+    - cd src
+    - make wm_names.t
+    - make vk_names.t
+    - cd ..
+    - make
+    - bin/mintty.exe --help
+    - bin/mintty.exe --version
+    - mintty.exe --log mintty.log --exec echo hello mintty
+    - grep hello mintty.log
 
 matrix:
   platform:
 #    - cygwin32
+#    - cygwin64
     - msys32
+#    - msys64
