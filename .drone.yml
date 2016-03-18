@@ -11,7 +11,7 @@ build:
     - bin/mintty.exe --help
     - bin/mintty.exe --version
     - mintty.exe --log mintty.old.log --exec echo hello mintty
-    - bin/mintty.exe --log mintty.new.log --exec echo hello mintty
+    - strace bin/mintty.exe --log mintty.new.log --exec echo hello mintty
     - ls -al
     - pwd
     - ps aux
