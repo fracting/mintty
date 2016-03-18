@@ -8,6 +8,9 @@ build:
     - make vk_names.t
     - cd ..
     - make
+    - bin/mintty.exe --log mintty.log --exec echo hello mintty
+    - cat mintty.log
+    - grep hello mintty.log
 
 matrix:
   platform:
