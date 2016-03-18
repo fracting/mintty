@@ -8,7 +8,7 @@ build:
     - make vk_names.t
     - cd ..
     - make
-    - bin/mintty.exe --log mintty.log --exec echo hello mintty
+      #- bin/mintty.exe --log mintty.log --exec echo hello mintty
     - ls -al
     - pwd
     - cat mintty.log
