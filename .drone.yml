@@ -10,11 +10,15 @@ build:
     - make
     - bin/mintty.exe --help
     - bin/mintty.exe --version
-      #    - mintty.exe --log mintty.log --exec echo hello mintty
+    - mintty.exe --log mintty.old.log --exec echo hello mintty
+    - bin/mintty.exe --log mintty.new.log --exec echo hello mintty
     - ls -al
     - pwd
-    - cat mintty.log
-    - grep hello mintty.log
+    - ps aux
+    - cat mintty.old.log
+    - grep hello mintty.old.log
+    - cat mintty.new.log
+    - grep hello mintty.new.log
 
 matrix:
   platform:
