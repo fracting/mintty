@@ -3,7 +3,7 @@ build:
   pull: true
   shell: $$platform
   commands:
-    -   cd src
+    - cd src
     - make wm_names.t
     - make vk_names.t
     - cd ..
