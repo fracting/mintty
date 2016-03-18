@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 cd src
 make wm_names.t
 make vk_names.t
