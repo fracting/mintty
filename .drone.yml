@@ -1,0 +1,20 @@
+build:
+  image: fracting/$$platform
+  pull: true
+  shell: $$platform
+  commands:
+    - cd src
+    - make wm_names.t
+    - make vk_names.t
+    - cd ..
+    - make
+    - bin/mintty.exe --log mintty.log --exec echo hello mintty
+    - grep hello mintty.log
+    - bin/mintty.exe --log - --exec echo hello stdout 
+
+matrix:
+  platform:
+#    - cygwin32
+#    - cygwin64
+    - msys32
+#    - msys64
