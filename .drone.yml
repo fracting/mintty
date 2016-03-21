@@ -1,7 +1,7 @@
 build:
   image: fracting/$$platform
   pull: true
-  shell: cygwin
+  shell: $$platform
   commands:
     - cd src
     - make wm_names.t
@@ -16,5 +16,5 @@ matrix:
   platform:
     - cygwin32
 #    - cygwin64
-#   - msys32
+    - msys32
 #    - msys64
